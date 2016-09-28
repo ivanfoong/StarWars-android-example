@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Height"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_mass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_mass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mass"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_hair_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_hair_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hair Color"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_skin_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_skin_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Skin Color"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_eye_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_eye_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Eye Color"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_birth_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_birth_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Birth Year"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gender"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_homeworld_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_homeworld_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Homeworld URL"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_film_urls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_film_urls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Film URLs"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_specie_urls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_specie_urls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Specie URLs"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_vehicle_urls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_vehicle_urls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vehicle URLs"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_starship_urls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_starship_urls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Starship URLs"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_created"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_created"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Created"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_edited"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_edited"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Edited"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="URL"
+                android:editable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+</ScrollView>
