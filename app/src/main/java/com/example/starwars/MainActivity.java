@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new PeopleFragment(), "People");
-        adapter.addFragment(new PeopleFragment(), "Films"); // TODO
+        adapter.addFragment(new FilmsFragment(), "Films");
         adapter.addFragment(new PeopleFragment(), "Planets"); // TODO
         adapter.addFragment(new PeopleFragment(), "Species"); // TODO
         adapter.addFragment(new PeopleFragment(), "Starships"); // TODO
