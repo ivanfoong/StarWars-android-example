@@ -2,16 +2,22 @@ package com.example.starwars;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+
+import com.example.starwarsapiclient.model.Person;
 
 import java.net.URL;
 
 /**
- * Created by pifk033z on 27/9/16.
+ * Created by ivanfoong on 27/9/16.
  */
 
-public class DetailActivity extends AppCompatActivity {
+public class PersonDetailActivity extends AppCompatActivity {
 
+    private Toolbar mToolbar;
     private EditText mNameEditText;
     private EditText mHeightEditText;
     private EditText mMassEditText;
@@ -45,7 +51,20 @@ public class DetailActivity extends AppCompatActivity {
         updateUI();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void init() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mNameEditText = (EditText) findViewById(R.id.input_name);
         mHeightEditText = (EditText) findViewById(R.id.input_height);
         mMassEditText = (EditText) findViewById(R.id.input_mass);
@@ -68,6 +87,8 @@ public class DetailActivity extends AppCompatActivity {
 
     private void updateUI() {
         if (mPerson != null) {
+            getSupportActionBar().setTitle(mPerson.name);
+
             if (mNameEditText != null) {
                 mNameEditText.setText(mPerson.name);
             }

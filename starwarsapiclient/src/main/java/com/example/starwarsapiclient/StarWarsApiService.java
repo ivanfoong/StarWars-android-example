@@ -1,6 +1,7 @@
 package com.example.starwarsapiclient;
 
-import com.example.starwarsapiclient.model.PeopleResponse;
+import com.example.starwarsapiclient.Response.FilmsResponse;
+import com.example.starwarsapiclient.Response.PeopleResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -12,4 +13,7 @@ import retrofit2.http.GET;
 public interface StarWarsApiService {
     @GET("people/")
     Call<PeopleResponse> getPeople();
+
+    @GET("films/")
+    Call<FilmsResponse> getFilms();
 }

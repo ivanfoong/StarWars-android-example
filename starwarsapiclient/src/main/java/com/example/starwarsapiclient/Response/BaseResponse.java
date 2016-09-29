@@ -1,4 +1,4 @@
-package com.example.starwarsapiclient.model;
+package com.example.starwarsapiclient.Response;
 
 /**
  * Created by pifk033z on 27/9/16.

@@ -1,25 +1,22 @@
 package com.example.starwars;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
-
-import com.example.starwarsapiclient.StarWarsApiClient;
-import com.example.starwarsapiclient.callback.PeopleCallback;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
-    private StarWarsApiClient mApiClient;
-    private ListView mListView;
-    private List<Person> mPeople;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,48 +26,54 @@ public class MainActivity extends Activity {
         init();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        reloadPeople();
-    }
-
     private void init() {
-        mApiClient = new StarWarsApiClient();
-        mListView = (ListView) findViewById(R.id.list_view);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
-                final Person selectedPerson = mPeople.get(position);
-                intent.putExtra("person", selectedPerson);
-                startActivity(intent);
-            }
-        });
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
-    private void reloadPeople() {
-        mApiClient.getPeople(new PeopleCallback() {
-            @Override
-            public void peopleCallback(List<com.example.starwarsapiclient.model.Person> people) {
-                ArrayList<Person> newPeople = new ArrayList<>();
-                ArrayList<String> names = new ArrayList<String>();
-                for (com.example.starwarsapiclient.model.Person person : people) {
-                    final Person newPerson = new Person(person);
-                    newPeople.add(newPerson);
-                    names.add(newPerson.name);
-                }
-                mPeople = newPeople;
-                final ArrayAdapter<String> nameAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.list_view, names);
-                mListView.setAdapter(nameAdapter);
-            }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new PeopleFragment(), "People");
+        adapter.addFragment(new PeopleFragment(), "Films"); // TODO
+        adapter.addFragment(new PeopleFragment(), "Planets"); // TODO
+        adapter.addFragment(new PeopleFragment(), "Species"); // TODO
+        adapter.addFragment(new PeopleFragment(), "Starships"); // TODO
+        adapter.addFragment(new PeopleFragment(), "Vehicles"); // TODO
+        viewPager.setAdapter(adapter);
+    }
 
-            @Override
-            public void errorCallback(Throwable throwable) {
-                Toast.makeText(getApplicationContext(), throwable.getMessage(), Toast.LENGTH_LONG);
-            }
-        });
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
     }
 }
